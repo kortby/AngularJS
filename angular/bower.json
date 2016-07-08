@@ -1,0 +1,22 @@
+{
+  "name": "angularkortby",
+  "description": "first",
+  "main": "index.js",
+  "authors": [
+    "kortby"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app/bower_components"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.6"
+  }
+}

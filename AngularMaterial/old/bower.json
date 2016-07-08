@@ -1,0 +1,21 @@
+{
+  "name": "angularmaterial",
+  "authors": [
+    "Richard <kortby@gmail.com>"
+  ],
+  "description": "retry",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.7"
+  }
+}

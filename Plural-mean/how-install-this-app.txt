@@ -1,0 +1,37 @@
+how did i install this app:
+
+- ceate folder directory
+- install git : 
+#git init
+to create a reposotiry
+
+- create .gitignore file then put on it
+.idea
+node_modules
+
+#git status
+ #git add -A
+ #git commit -m "first commit"
+
+
+- install bower
+#npm install bower
+
+- create "server" folder to put source code and "public" folder for the client source
+
+- create ".bowerrc" file to tell bower where to install our client side
+{
+	"directory" : "public/vendor"
+}
+
+- create #bower init
+#bower install jquery --save
+#bower install toastr --save
+#bower install angular angular-resource angular-route --save
+
+- create "server.js" file
+
+- #npm install nodemon -g
+
+#nodemon server.js
+

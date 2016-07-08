@@ -1,0 +1,147 @@
+<div ng-controller="ContactsCtrl">
+
+<div data-alert ng-show="msg" class="alert-box info radius">{{ msg }}</div>
+
+<!-- show contact -->
+<div class="row" ng-show="contactShow">
+	<div class="panel">
+		<h3>{{ name }}</h3>
+		<ul>
+			<li><strong>Company: </strong>{{ company }}</li>
+			<li><strong>Email Address: </strong>{{ email }}</li>
+			<hr>
+			<h4>Phone:</h4>
+			<li><strong>Mobile: </strong>{{ mobile }}</li>
+			<li><strong>Home: </strong>{{ home }}</li>
+			<li><strong>Work: </strong>{{ work }}</li>
+			<hr>
+			<h4>Location Info:</h4>
+			<li><strong>Address: </strong>{{ street }}</li>
+			<li><strong>City: </strong>{{ city }}</li>
+			<li><strong>State: </strong>{{ state }}</li>
+			<li><strong>Zip Code: </strong>{{ zip }}</li>
+		</ul>
+		<button class="button small radius secondary" ng-click="hideForm()">Close</button>
+	</div>
+</div>
+<a href="" class="button tiny" ng-click="addForm()" ng-hide="addFormShow">Add Contacts</a>
+<!-- Add contact -->
+<form ng-submit="addFormSubmit()" ng-show="addFormShow">
+<h2>Add Contact</h2>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Name
+        <input ng-model="name" type="text" placeholder="John Doe" required />
+      </label>
+      <label>Company	
+        <input ng-model="company" type="text" placeholder="Company" />
+      </label>
+      <label>Mobile phone
+        <input ng-model="mobile" type="text" placeholder="555-555-5555" />
+      </label>
+      <label>Work phone
+        <input ng-model="work" type="text" placeholder="555-555-5555" />
+      </label>
+      <label>home phone
+        <input ng-model="home" type="text" placeholder="555-555-5555" />
+      </label>
+      
+    </div>
+    <div class="large-6 columns">
+      <label>Email
+        <input ng-model="email" type="text" placeholder="john@example.com" />
+      </label>
+      <label>Address Street
+        <input ng-model="street" type="text" placeholder="Address" />
+      </label>
+      <label>State
+        <input ng-model="state" type="text" placeholder="State" />
+      </label>
+      </label>
+      <label>City
+        <input ng-model="city" type="text" placeholder="City" />
+      </label>
+      <label>Zip Code
+        <input ng-model="zip" type="text" placeholder="Zip Code" />
+      </label>
+    </div>
+    <div class="large-12 columns">
+    	<input ng-click="editFormSubmit()" type="submit" class="button small radius success" value="Add Contact">
+    	<button class="button small radius secondary" ng-click="hideForm()">Cancel</button>
+    </div>
+  </div>
+</form>
+<!-- update -->
+
+<form ng-submit="editFormSubmit()" ng-show="editFormNgshow">
+<h2>Edit Contact ({{ contacts.length }})</h2>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Name
+        <input ng-model="name" type="text" placeholder="John Doe" required />
+      </label>
+      <label>Company	
+        <input ng-model="company" type="text" placeholder="Company" />
+      </label>
+      <label>Mobile phone
+        <input ng-model="mobile" type="text" placeholder="555-555-5555" />
+      </label>
+      <label>Work phone
+        <input ng-model="work" type="text" placeholder="555-555-5555" />
+      </label>
+      <label>home phone
+        <input ng-model="home" type="text" placeholder="555-555-5555" />
+      </label>
+      
+    </div>
+    <div class="large-6 columns">
+      <label>Email
+        <input ng-model="email" type="text" placeholder="john@example.com" />
+      </label>
+      <label>Address Street
+        <input ng-model="street" type="text" placeholder="Address" />
+      </label>
+      <label>State
+        <input ng-model="state" type="text" placeholder="State" />
+      </label>
+      </label>
+      <label>City
+        <input  ng-model="city" type="text" placeholder="City" />
+      </label>
+      <label>Zip Code
+        <input ng-model="zip" type="text" placeholder="Zip Code" />
+      </label>
+    </div>
+    <div class="large-12 columns">
+    	<input ng-click="editFormSubmit()" type="submit" class="button small radius success" value="Update Contact">
+    	<button class="button small radius secondary" ng-click="hideForm()">Cancel</button>
+    </div>
+  </div>
+</form>
+
+
+<!-- table -->
+<table>
+  <thead>
+    <tr>
+      <th width="20%">Name</th>
+      <th width="35%">Company</th>
+      <th width="25%">Email</th>
+      <th width="20%">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="contact in contacts">
+      <td><a ng-click="ShowingContact(contact)">{{ contact.name }}</a></td>
+      <td>{{ contact.company }}</td>
+      <td>{{ contact.email }}</td>
+      <td><a class="button tiny" ng-click="editForm(contact)">Edit</a>
+      <a class="button tiny alert" confirmation-needed="Really Delete?"  ng-click="removeContact(contact)">Delete</a></td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+
+</div>

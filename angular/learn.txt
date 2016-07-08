@@ -1,0 +1,27 @@
+# sudo npm install angular-materail
+# sudo npm init
+
+# sudo npm install jspm -g
+# jspm install angular-material
+
+# sudo npm install bower -g
+# bower install angular-material
+
+594-92-2593
+
+503-94-4153
+
+# tsd query angular
+
+# jspm install angular-material
+# tsd query angular
+
+# tsd query angular-material
+# tsd install angular angular-material --save
+
+# cd app/src
+# tsc // to compile
+
+# npm install live-server -g
+
+# live-server
